@@ -27,7 +27,7 @@ async function createContact(req, res, next) {
     const contact = {
       name: {
         type: String,
-        required: [true, "Set name for contact"],
+        
       },
       email: {
         type: String,
@@ -64,14 +64,14 @@ const updateById = async (req, res, next) => {
   res.json(result);
 };
 
-// const updateFavorite= async (req, res, next) => {
-//   const { id } = req.params;
-//   const result = await Contact.findByIdAndUpdate(id, req.body, {new:true});
-//   if (!result) {
-//     throw HttpError(404, "Not found");
-//   }
-//   res.json(result);
-// };
+const updateFavorite= async (req, res, next) => {
+  const { id } = req.params;
+  const result = await Contact.findByIdAndUpdate(id, req.body, {new:true});
+  if (!result) {
+    throw HttpError(404, "missing field favorite");
+  }
+  res.json(result);
+};
 
 // function updateStatusContact(contactId, body) {
 //   // Реалізуйте цю функцію відповідно до логіки вашої бази даних або зовнішнього сервісу
@@ -107,5 +107,5 @@ module.exports = {
   add: ctrlWrapper(createContact),
   deleteById: ctrlWrapper(deleteById),
   updateById: ctrlWrapper(updateById),
-  // updateFavorite: ctrlWrapper(updateFavorite),
+  updateFavorite: ctrlWrapper(updateFavorite),
 };
