@@ -73,11 +73,7 @@ const updateFavorite= async (req, res, next) => {
   res.json(result);
 };
 
-// function updateStatusContact(contactId, body) {
-//   // Реалізуйте цю функцію відповідно до логіки вашої бази даних або зовнішнього сервісу
-//   // Тут ви маєте оновити поле favorite для контакту з contactId відповідно до значення, переданого в body
-//   // Поверніть оновлений об'єкт контакту або null, якщо контакт не знайдено
-// }
+
 
 // // Маршрут PATCH /api/contacts/:contactId/favorite
 // router.patch('/api/contacts/:contactId/favorite', (req, res) => {
